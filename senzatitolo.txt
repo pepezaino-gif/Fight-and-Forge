@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Forge RPG</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font moderno e pulito -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="game-container">
+        
+        <!-- HEADER STATISTICHE & VALUTE -->
+        <header class="top-bar">
+            <div class="user-info">
+                <div class="avatar">🛡️</div>
+                <div class="user-details">
+                    <span id="player-name">Eroe</span>
+                    <span id="player-power">⚔️ <span id="stat-power">0</span></span>
+                </div>
+            </div>
+            <div class="currencies">
+                <div class="currency"><span class="icon">🪙</span> <span id="currency-gold">0</span></div>
+                <div class="currency"><span class="icon">💎</span> <span id="currency-gems">0</span></div>
+            </div>
+        </header>
+
+        <!-- AREA BATTAGLIA (TOP SCREEN) -->
+        <section class="battle-stage">
+            <div class="stage-info">
+                <span id="stage-name">Stage 1-1</span>
+                <div class="wave-bar-container">
+                    <div id="wave-progress" class="wave-bar" style="width: 20%;"></div>
+                </div>
+            </div>
+
+            <!-- Visuale Combattimento HD -->
+            <div class="battle-arena">
+                <div id="hero-character" class="character hero">
+                    <div class="hp-bar-container"><div id="hero-hp" class="hp-bar"></div></div>
+                    <div class="character-sprite">🗡️</div>
+                </div>
+                <div id="enemy-character" class="character enemy">
+                    <div class="hp-bar-container"><div id="enemy-hp" class="hp-bar"></div></div>
+                    <div class="character-sprite">👹</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE PRINCIPALE DINAMICA (TAB CONTENT) -->
+        <main class="main-content">
+            
+            <!-- TAB 1: FORGIA ED EQUIPAGGIAMENTO -->
+            <div id="tab-forge" class="tab-panel active">
+                
+                <!-- Griglia Equipaggiamento -->
+                <div class="equipment-grid">
+                    <div class="equip-slot" data-slot="weapon"><span class="slot-icon">⚔️</span></div>
+                    <div class="equip-slot" data-slot="helmet"><span class="slot-icon">🪖</span></div>
+                    <div class="equip-slot" data-slot="chest"><span class="slot-icon">🛡️</span></div>
+                    <div class="equip-slot" data-slot="boots"><span class="slot-icon">🥾</span></div>
+                    <div class="equip-slot" data-slot="ring"><span class="slot-icon">💍</span></div>
+                    <div class="equip-slot" data-slot="amulet"><span class="slot-icon">📿</span></div>
+                </div>
+
+                <!-- Anvil / Area della Forgia -->
+                <div class="forge-area">
+                    <div class="forge-level-tag">Livello Forgia <span id="forge-level">1</span></div>
+                    <div class="anvil-display">
+                        <div class="glow-effect"></div>
+                        <div id="forge-hammer" class="hammer-icon">🔨</div>
+                    </div>
+                    
+                    <div class="forge-actions">
+                        <button id="btn-forge" class="btn-primary btn-forge">
+                            <span>FORGIA</span>
+                            <small>🪙 <span id="forge-cost">100</span></small>
+                        </button>
+                        <button id="btn-autoforge" class="btn-secondary">AUTO</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB 2: TECH TREE / ALBERO TECNOLOGICO -->
+            <div id="tab-tech" class="tab-panel">
+                <div class="tech-header">
+                    <h2>Albero Tecnologico</h2>
+                    <p>Potenza i parametri fondamentali del tuo regno</p>
+                </div>
+                <div id="tech-tree-container" class="tech-tree">
+                    <!-- I nodi verranno generati via JavaScript -->
+                </div>
+            </div>
+
+            <!-- TAB 3: CLASSIFICA / LEAGUE -->
+            <div id="tab-rank" class="tab-panel">
+                <div class="rank-header">
+                    <h2>Lega Oro</h2>
+                    <small>Fine stagione in: 24h 00m</small>
+                </div>
+                <div class="leaderboard-list">
+                    <div class="rank-item my-rank">
+                        <span class="rank-num">#1</span>
+                        <span class="player-name">Tu (Eroe)</span>
+                        <span class="player-score">⚔️ 1.2M</span>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- BARRA DI NAVIGAZIONE IN BASSO -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" onclick="switchTab('forge')">
+                <span class="nav-icon">⚒️</span>
+                <span class="nav-label">Forgia</span>
+            </button>
+            <button class="nav-btn" onclick="switchTab('tech')">
+                <span class="nav-icon">🧬</span>
+                <span class="nav-label">Tech Tree</span>
+            </button>
+            <button class="nav-btn" onclick="switchTab('rank')">
+                <span class="nav-icon">🏆</span>
+                <span class="nav-label">Lega</span>
+            </button>
+        </nav>
+
+    </div>
+
+</body>
+</html>
