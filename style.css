@@ -338,3 +338,41 @@ body {
 .nav-img { width: 22px; height: 22px; filter: opacity(0.5); }
 .nav-btn.active .nav-img { filter: opacity(1) drop-shadow(0 0 5px rgba(245, 158, 11, 0.6)); }
 .nav-label { font-size: 10px; font-weight: 700; }
+/* ANIMAZIONI DI COMBATTIMENTO */
+.character {
+    transition: transform 0.15s ease-in-out;
+}
+
+.hero.attacking {
+    transform: translateX(25px) scale(1.1);
+}
+
+.enemy.hit {
+    transform: translateX(-10px) scale(0.9);
+    filter: brightness(1.5) drop-shadow(0 0 10px #ef4444);
+}
+
+/* POPUP DANNI VOLANTI */
+.damage-popup {
+    position: absolute;
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: #facc15;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.9), 0 0 10px rgba(250, 204, 21, 0.6);
+    pointer-events: none;
+    z-index: 100;
+    animation: floatUp 0.8s forwards ease-out;
+}
+
+.damage-popup.crit {
+    font-size: 24px;
+    color: #ef4444;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.9), 0 0 15px rgba(239, 68, 68, 0.8);
+}
+
+@keyframes floatUp {
+    0% { opacity: 1; transform: translateY(0) scale(0.8); }
+    50% { transform: translateY(-25px) scale(1.2); }
+    100% { opacity: 0; transform: translateY(-45px) scale(1); }
+}
