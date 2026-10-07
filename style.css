@@ -402,3 +402,9 @@ body {
     object-fit: contain;
     filter: drop-shadow(0 8px 15px rgba(0,0,0,0.8));
 }
+/* DIMENSIONI VETTORIALI SVG NATIVE */
+.asset-svg { width: 55px; height: 55px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.8)); }
+.hero .asset-svg { transform: scaleX(-1); }
+.asset-svg-slot { width: 36px; height: 36px; }
+.asset-svg-anvil { width: 70px; height: 70px; }
+.asset-svg-hammer { width: 45px; height: 45px; position: absolute; top: -15px; right: 0; transform: rotate(-20deg); }
