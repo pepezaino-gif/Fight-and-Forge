@@ -376,3 +376,29 @@ body {
     50% { transform: translateY(-25px) scale(1.2); }
     100% { opacity: 0; transform: translateY(-45px) scale(1); }
 }
+/* STILI IMMAGINI DINAMICHE DA ASSETS.JS */
+.asset-img-char {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.8));
+}
+
+.hero .asset-img-char {
+    transform: scaleX(-1); /* Orientato verso il nemico */
+}
+
+.asset-img-slot {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    opacity: 0.85;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+}
+
+.anvil-img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.8));
+}
